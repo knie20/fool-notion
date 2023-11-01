@@ -22,8 +22,6 @@ export default function FunctionExhibit({}){
             S 75,10 50,5
             S 25,0 0,5
             z"/>
-
-            
         </svg>
     </div> 
     
