@@ -9,7 +9,7 @@ export default function FunctionExhibit({}){
 
     return <div>
         <svg
-        viewBox="0 0 100 100"
+        viewBox="0 0 100 50"
         id="fn-function">
             <path
             style={styles}
