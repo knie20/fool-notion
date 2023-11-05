@@ -1,7 +1,12 @@
-export default function TypedObjectExhibit({anchor, size, type, isSlot}: TypedObjectProps){
+export default function TypedObjectExhibit({offset, size, type, isSlot}: TypedObjectProps){
+    if(offset === undefined)
+        offset = [0,0];
+    if(size === undefined)
+        size = 100;
+
     let objectNode;
     switch(type){
-        case "octagon":{
+        case "octagon": {
             objectNode = <OctagonShapedObject isSlot={isSlot} />;
             break;
         }
@@ -19,8 +24,17 @@ export default function TypedObjectExhibit({anchor, size, type, isSlot}: TypedOb
         }
     }
 
+    const wrapperStyle = {
+        position: 'absolute' as const,
+        left: offset[0],
+        top: offset[1],
+        width: size,
+        height: size,
+        overflow: 'hidden' as const
+    }
+
     let render = <>
-        <div>
+        <div style={wrapperStyle}>
             {objectNode}
         </div>
     </>
@@ -30,7 +44,7 @@ export default function TypedObjectExhibit({anchor, size, type, isSlot}: TypedOb
 }
 
 interface TypedObjectProps {
-    anchor: [x: number, y: number],
+    offset: [x: number, y: number],
     size: number,
     type: "octagon" | "square" | "circle" | "star",
     isSlot: boolean

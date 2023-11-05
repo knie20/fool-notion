@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export default function DisplayWindow({children, size, label}: { 
+export default function TestDisplayWindow({children, size, label}: { 
     children: ReactElement,
     size: 'small' | 'medium' | 'large',
     label: string
@@ -20,8 +20,13 @@ export default function DisplayWindow({children, size, label}: {
             break;
         } 
     }
+
+    const wrapperStyle = {
+        position: 'relative' as const,
+    }
+
     return <div className={styleClasses}>
         <h2>{label}</h2>
-        <div className="shrink"> {children} </div>
+        <div className="shrink" style={wrapperStyle}> {children} </div>
     </div> 
 }
