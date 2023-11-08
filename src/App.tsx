@@ -1,4 +1,4 @@
-import FunctionExhibit from './components/atoms/FunctionExhibit';
+import FunctionActor from './components/atoms/FunctionExhibit';
 import TypedObjectExhibit from './components/atoms/TypedObjectsExhibit';
 import TestWrapper from './components/molecules/TestWrapper';
 import FunctionPlay from './components/plays/FunctionPlay';

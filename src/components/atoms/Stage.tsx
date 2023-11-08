@@ -9,7 +9,7 @@ export default function Stage({ children, windowHeight, windowWidth }: StageProp
     }
 
     return (
-        <div style={styles}>
+        <div style={styles} id="stage">
           {children}
         </div>
       );
